@@ -62,6 +62,7 @@
 		E2A663FF24C744F300252EB4 /* DoctorProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A663FE24C744F300252EB4 /* DoctorProfilePage.swift */; };
 		E2A6640124C74E3100252EB4 /* MarketPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6640024C74E3100252EB4 /* MarketPage.swift */; };
 		E2A6640324C8C77E00252EB4 /* BicyclePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6640224C8C77E00252EB4 /* BicyclePage.swift */; };
+		E2BD98AB24D09EDB003E2571 /* MechanicProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BD98AA24D09EDB003E2571 /* MechanicProfilePage.swift */; };
 		E2D9A7B424C5EE0D00F2C449 /* ARKidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A7B324C5EE0D00F2C449 /* ARKidsUITests.swift */; };
 		E2D9A7CC24C6023D00F2C449 /* BaseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A7CB24C6023D00F2C449 /* BaseClass.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		E2A663FE24C744F300252EB4 /* DoctorProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfilePage.swift; sourceTree = "<group>"; };
 		E2A6640024C74E3100252EB4 /* MarketPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPage.swift; sourceTree = "<group>"; };
 		E2A6640224C8C77E00252EB4 /* BicyclePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicyclePage.swift; sourceTree = "<group>"; };
+		E2BD98AA24D09EDB003E2571 /* MechanicProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicProfilePage.swift; sourceTree = "<group>"; };
 		E2D9A7B124C5EE0D00F2C449 /* ARKidsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARKidsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D9A7B324C5EE0D00F2C449 /* ARKidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKidsUITests.swift; sourceTree = "<group>"; };
 		E2D9A7B524C5EE0D00F2C449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -327,9 +329,10 @@
 				E2D9A7B524C5EE0D00F2C449 /* Info.plist */,
 				E2D9A7CB24C6023D00F2C449 /* BaseClass.swift */,
 				E2A663FC24C728E500252EB4 /* StartPage.swift */,
-				E2A663FE24C744F300252EB4 /* DoctorProfilePage.swift */,
 				E2A6640024C74E3100252EB4 /* MarketPage.swift */,
 				E2A6640224C8C77E00252EB4 /* BicyclePage.swift */,
+				E2A663FE24C744F300252EB4 /* DoctorProfilePage.swift */,
+				E2BD98AA24D09EDB003E2571 /* MechanicProfilePage.swift */,
 			);
 			path = ARKidsUITests;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			files = (
 				E2A6640324C8C77E00252EB4 /* BicyclePage.swift in Sources */,
 				E2D9A7B424C5EE0D00F2C449 /* ARKidsUITests.swift in Sources */,
+				E2BD98AB24D09EDB003E2571 /* MechanicProfilePage.swift in Sources */,
 				E2A6640124C74E3100252EB4 /* MarketPage.swift in Sources */,
 				E2A663FD24C728E500252EB4 /* StartPage.swift in Sources */,
 				E2D9A7CC24C6023D00F2C449 /* BaseClass.swift in Sources */,

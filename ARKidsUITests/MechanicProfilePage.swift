@@ -1,4 +1,3 @@
-//
 //  DoctorProfilePage.swift
 //  ARKidsUITests
 //
@@ -8,7 +7,7 @@
 
 import XCTest
 
-class DoctorProfile: BaseClass {
+class MechanicProfile: BaseClass {
     
     lazy var profileTitle = app.staticTexts["Profile"]
     lazy var marketButton = app.buttons["marketIcon"]
