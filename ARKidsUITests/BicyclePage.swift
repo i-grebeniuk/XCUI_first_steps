@@ -10,13 +10,13 @@ import XCTest
 
 class Bicycle: BaseClass {
     lazy var boost = app.staticTexts["Boost for 100$"]
-    // Уродский локатор, получил его из тестРекордера, так как лэбел "Boost for 100$" !.isHittable
-    lazy var boostButton = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .button).element
+ 
     func verifyBoostButtonExists() {
-        XCTAssert(boost.exists)
+        XCTAssert(boost.exists,
+                  "\(boost) button is not displayed, but it should be!")
     }
     
     func tapOnBoostButton() {
-        boostButton.tap()
+        boost.coordinate(withNormalizedOffset: .zero).tap()
     }
 }

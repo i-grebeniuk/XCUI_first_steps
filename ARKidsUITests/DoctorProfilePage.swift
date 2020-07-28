@@ -15,8 +15,8 @@ class DoctorProfile: BaseClass {
     lazy var marketButton = app.buttons["marketIcon"]
     lazy var bycicleTitle = app.staticTexts["Bicycle"]
     lazy var propertyTitle = app.staticTexts["Property"]
-    // Супер убогий локатор, смог найти его только с помошю тестрекордера. Элементы Property или Risk !hittable  и не нажимаются
-    lazy var boughtProductBlock = app.tables.cells.otherElements.cells.children(matching: .button).element
+    lazy var myProductsLabel = app.staticTexts["My Products"]
+    
     func openMarket(){
         marketButton.tap()
     }
@@ -24,11 +24,10 @@ class DoctorProfile: BaseClass {
     func verifyBoughtProductAdded(product: XCUIElement){
         XCTAssert(product.exists,
                         "\(product) is not displayed, but it should be!")
-//        XCTAssert(app.buttons[product].exists,
-//                  "\(product) is not displayed, but it should be!")
     }
     
-    func openBoughtProduct(){
-        boughtProductBlock.tap()
+    func openBoughtProduct(_ elelemnt: XCUIElement){
+        elelemnt.coordinate(withNormalizedOffset: .zero).tap()
     }
+    
 }

@@ -9,11 +9,34 @@
 import XCTest
 
 class BaseClass: XCTestCase {
+    
     let app = XCUIApplication()
     
+//    func scrollDownToVisibleElement(_ element :XCUIElement){
+//        while !element.exists {
+//            app.swipeUp()
+//        }
     func scrollDownToVisibleElement(_ element :XCUIElement){
-        while !element.exists {
-            app.swipeUp()
+        var counter: Int = 0
+        while counter < 5 {
+            if !element.exists {
+                app.swipeUp()
+            } else {
+                break
+            }
+            counter += 1
+        }
+    }
+    
+    func scrollUpToVisibleElement(_ element :XCUIElement){
+        var counter: Int = 0
+        while counter < 5 {
+            if !element.exists {
+                app.swipeDown()
+            } else {
+                break
+            }
+            counter += 1
         }
     }
     
@@ -25,6 +48,4 @@ class BaseClass: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-    
-    
 }
