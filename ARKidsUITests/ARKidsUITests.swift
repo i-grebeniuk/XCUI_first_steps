@@ -19,40 +19,40 @@ class ARKidsUITests: BaseClass {
     
     func testProductButtonIsDisabledAfterBuying() {
         let startPage = StartPage()
-        let doctorProfilePage = Profile()
+        let profilepage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Doctor)
-        doctorProfilePage.openMarket()
+        profilepage.openMarket()
         marketPage.buyProduct(.property)
         marketPage.productButtonIsDisabled(.property)
     }
     
-    func testBProductAddedToProfilePage() {
+    func testProductAddedToProfilePage() {
         let startPage = StartPage()
-        let doctorProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Doctor)
-        doctorProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.buyProduct(.property)
         marketPage.backToProfilePage()
-        doctorProfilePage.scrollDownToVisibleElement(doctorProfilePage.propertyTitle)
-        doctorProfilePage.verifyBoughtProductAdded(product: doctorProfilePage.propertyTitle)
+        profilePage.scrollDownToVisibleElement(profilePage.propertyTitle)
+        profilePage.verifyBoughtProductAdded(product: profilePage.propertyTitle)
     }
 
     func testTapOnBoostButton() {
         let startPage = StartPage()
-        let doctorProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         let bicyclePage = Bicycle()
         app.launch()
         startPage.openProfilePage(.Doctor)
-        doctorProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.buyProduct(.property)
         marketPage.backToProfilePage()
-        doctorProfilePage.scrollDownToVisibleElement(doctorProfilePage.propertyTitle)
-        doctorProfilePage.openBoughtProduct(doctorProfilePage.propertyTitle)
+        profilePage.scrollDownToVisibleElement(profilePage.propertyTitle)
+        profilePage.openBoughtProduct(profilePage.propertyTitle)
         bicyclePage.verifyBoostButtonExists()
         bicyclePage.tapOnBoostButton()
         }
@@ -66,42 +66,42 @@ class ARKidsUITests: BaseClass {
     
     func testMarketButtonExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = Profile()
+        let profilePage = Profile()
         app.launch()
         startPage.openProfilePage(.Mechanic)
-        mechanicProfilePage.scrollDownToVisibleElement(mechanicProfilePage.myProductsLabel)
-        mechanicProfilePage.scrollUpToVisibleElement(mechanicProfilePage.marketButton)
-        mechanicProfilePage.verifyMarketButtonIsDisplayed()
+        profilePage.scrollDownToVisibleElement(profilePage.myProductsLabel)
+        profilePage.scrollUpToVisibleElement(profilePage.marketButton)
+        profilePage.verifyMarketButtonIsDisplayed()
     }
     
     func testDepositButtonExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
-        mechanicProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.productExists(.deposit)
     }
     
     func testCongratulatonsAlertExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
-        mechanicProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.buyProduct(.deposit)
         marketPage.verifyAlertAppears()
     }
     
     func testAlertDisappearsAfterClosig() {
         let startPage = StartPage()
-        let mechanicProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
-        mechanicProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.buyProduct(.deposit)
         marketPage.closeCongratulationsAlert()
         marketPage.verifyAlertClosed()
@@ -115,31 +115,53 @@ class ARKidsUITests: BaseClass {
     
     func testMarketButtonForGardener() {
         let startPage = StartPage()
-        let gardenerProfilePage = Profile()
+        let profilePage = Profile()
         app.launch()
         startPage.openProfilePage(.Gardener)
-        gardenerProfilePage.scrollDownToVisibleElement(gardenerProfilePage.myProductsLabel)
-        gardenerProfilePage.scrollUpToVisibleElement(gardenerProfilePage.marketButton)
-        gardenerProfilePage.verifyMarketButtonIsDisplayed()
+        profilePage.scrollDownToVisibleElement(profilePage.myProductsLabel)
+        profilePage.scrollUpToVisibleElement(profilePage.marketButton)
+        profilePage.verifyMarketButtonIsDisplayed()
     }
     func testStocksButtonExists() {
         let startPage = StartPage()
-        let gardenerProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Gardener)
-        gardenerProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.productExists(.stockTrading)
     }
     func testStocksButtonIsDisabled() {
         let startPage = StartPage()
-        let gardenerProfilePage = Profile()
+        let profilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Gardener)
-        gardenerProfilePage.openMarket()
+        profilePage.openMarket()
         marketPage.productExists(.stockTrading)
         marketPage.buyProduct(.stockTrading)
         marketPage.productButtonIsDisabled(.stockTrading)
       }
+// Test scenario 4
+    
+    func tsstGardenerButtonExists(){
+        let startPage = StartPage()
+        app.launch()
+        startPage.verifyProfessionExists(.Gardener)
+    }
+    
+    func testBalanceChagesAfterBuying(){
+        let startPage = StartPage()
+        let profilePage = Profile()
+        let marketPage = Market()
+        app.launch()
+        startPage.openProfilePage(.Gardener)
+        let oldBalance = profilePage.getPrice(profilePage.balance)
+        profilePage.openMarket()
+        let productPrice = marketPage.getPrice(app.buttons["40000 $"])
+        marketPage.buyProduct(.property)
+        marketPage.backToProfilePage()
+        let newBalance = profilePage.getPrice(profilePage.balance)
+        profilePage.verifyBalanceChanged(oldBalance, newBalance, productPrice)
+    }
 }

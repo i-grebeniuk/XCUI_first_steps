@@ -324,12 +324,12 @@
 			isa = PBXGroup;
 			children = (
 				E2D9A7B324C5EE0D00F2C449 /* ARKidsUITests.swift */,
-				E2D9A7B524C5EE0D00F2C449 /* Info.plist */,
 				E2D9A7CB24C6023D00F2C449 /* BaseClass.swift */,
+				E2A663FE24C744F300252EB4 /* ProfilePage.swift */,
 				E2A663FC24C728E500252EB4 /* StartPage.swift */,
 				E2A6640024C74E3100252EB4 /* MarketPage.swift */,
 				E2A6640224C8C77E00252EB4 /* BicyclePage.swift */,
-				E2A663FE24C744F300252EB4 /* ProfilePage.swift */,
+				E2D9A7B524C5EE0D00F2C449 /* Info.plist */,
 			);
 			path = ARKidsUITests;
 			sourceTree = "<group>";

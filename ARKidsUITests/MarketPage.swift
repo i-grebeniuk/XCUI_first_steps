@@ -52,7 +52,7 @@ class Market: BaseClass {
         XCTAssert(!boughtProduct.isHittable,
                   "\(boughtProduct) button is not disabled, but it should be!")
     }
-    
+        
     func backToProfilePage(){
         profileButton.tap()
     }
