@@ -1,13 +1,14 @@
-//  DoctorProfilePage.swift
+//
+//  GardenerProfilePage.swift
 //  ARKidsUITests
 //
-//  Created by Ivan Grebenyuk on 21.07.2020.
+//  Created by Ivan Grebenyuk on 28.07.2020.
 //  Copyright © 2020 Victor Sobolev. All rights reserved.
 //
 
 import XCTest
 
-class DoctorProfile: BaseClass {
+class GardenerProfile: BaseClass {
     
     lazy var profileTitle = app.staticTexts["Profile"]
     lazy var marketButton = app.buttons["marketIcon"]

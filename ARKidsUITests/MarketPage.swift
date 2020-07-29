@@ -47,9 +47,9 @@ class Market: BaseClass {
         thanksButton.tap()
     }
     
-    func productIsDisabledafterBuying(_ good: Goods){
-        let boughtProduct = app.buttons[good.rawValue]
-        XCTAssert(!boughtProduct.isEnabled,
+    func productButtonIsDisabled(_ good: Goods){
+        let boughtProduct = app.buttons.staticTexts[good.rawValue]
+        XCTAssert(!boughtProduct.isHittable,
                   "\(boughtProduct) button is not disabled, but it should be!")
     }
     

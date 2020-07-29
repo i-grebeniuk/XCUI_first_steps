@@ -1,4 +1,4 @@
-//  DoctorProfilePage.swift
+//  MechanicProfilePage.swift
 //  ARKidsUITests
 //
 //  Created by Ivan Grebenyuk on 21.07.2020.

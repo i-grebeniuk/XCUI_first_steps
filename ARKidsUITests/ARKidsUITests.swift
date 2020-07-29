@@ -25,7 +25,7 @@ class ARKidsUITests: BaseClass {
         startPage.openProfilePage(.Doctor)
         doctorProfilePage.openMarket()
         marketPage.buyProduct(.property)
-        marketPage.productIsDisabledafterBuying(.property)
+        marketPage.productButtonIsDisabled(.property)
     }
     
     func testBProductAddedToProfilePage() {
@@ -58,7 +58,7 @@ class ARKidsUITests: BaseClass {
         }
     
     // Test Scenario2
-    func testVerifyMechancButtonExists() {
+    func testMechanicButtonExists() {
         let startPage = StartPage()
         app.launch()
         startPage.verifyProfessionExists(.Mechanic)
@@ -74,7 +74,7 @@ class ARKidsUITests: BaseClass {
         mechanicProfilePage.verifyMarketButtonIsDisplayed()
     }
     
-    func testDeositButtonExists() {
+    func testDepositButtonExists() {
         let startPage = StartPage()
         let mechanicProfilePage = MechanicProfile()
         let marketPage = Market()
@@ -106,5 +106,39 @@ class ARKidsUITests: BaseClass {
         marketPage.closeCongratulationsAlert()
         marketPage.verifyAlertClosed()
     }
-
+// Test scenario 3
+    func testGardenerButtonExists() {
+        let startPage = StartPage()
+        app.launch()
+        startPage.verifyProfessionExists(.Gardener)
+    }
+    
+    func testMarketButtonForGardener() {
+        let startPage = StartPage()
+        let gardenerProfilePage = GardenerProfile()
+        app.launch()
+        startPage.openProfilePage(.Gardener)
+        gardenerProfilePage.scrollDownToVisibleElement(gardenerProfilePage.myProductsLabel)
+        gardenerProfilePage.scrollUpToVisibleElement(gardenerProfilePage.marketButton)
+        gardenerProfilePage.verifyMarketButtonIsDisplayed()
+    }
+    func testStocksButtonExists() {
+        let startPage = StartPage()
+        let gardenerProfilePage = GardenerProfile()
+        let marketPage = Market()
+        app.launch()
+        startPage.openProfilePage(.Gardener)
+        gardenerProfilePage.openMarket()
+        marketPage.productExists(.stockTrading)
+    }
+    func testStocksButtonIsDisabled() {
+        let startPage = StartPage()
+        let gardenerProfilePage = GardenerProfile()
+        let marketPage = Market()
+        app.launch()
+        startPage.openProfilePage(.Gardener)
+        gardenerProfilePage.openMarket()
+        marketPage.productExists(.stockTrading)
+        marketPage.productButtonIsDisabled(.stockTrading)
+      }
 }
