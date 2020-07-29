@@ -12,10 +12,6 @@ class BaseClass: XCTestCase {
     
     let app = XCUIApplication()
     
-//    func scrollDownToVisibleElement(_ element :XCUIElement){
-//        while !element.exists {
-//            app.swipeUp()
-//        }
     func scrollDownToVisibleElement(_ element :XCUIElement){
         var counter: Int = 0
         while counter < 5 {

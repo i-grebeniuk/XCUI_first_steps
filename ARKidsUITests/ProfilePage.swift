@@ -7,7 +7,7 @@
 
 import XCTest
 
-class DoctorProfile: BaseClass {
+class Profile: BaseClass {
     
     lazy var profileTitle = app.staticTexts["Profile"]
     lazy var marketButton = app.buttons["marketIcon"]

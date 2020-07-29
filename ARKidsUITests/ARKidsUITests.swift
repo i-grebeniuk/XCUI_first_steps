@@ -19,7 +19,7 @@ class ARKidsUITests: BaseClass {
     
     func testProductButtonIsDisabledAfterBuying() {
         let startPage = StartPage()
-        let doctorProfilePage = DoctorProfile()
+        let doctorProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Doctor)
@@ -30,7 +30,7 @@ class ARKidsUITests: BaseClass {
     
     func testBProductAddedToProfilePage() {
         let startPage = StartPage()
-        let doctorProfilePage = DoctorProfile()
+        let doctorProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Doctor)
@@ -43,7 +43,7 @@ class ARKidsUITests: BaseClass {
 
     func testTapOnBoostButton() {
         let startPage = StartPage()
-        let doctorProfilePage = DoctorProfile()
+        let doctorProfilePage = Profile()
         let marketPage = Market()
         let bicyclePage = Bicycle()
         app.launch()
@@ -66,7 +66,7 @@ class ARKidsUITests: BaseClass {
     
     func testMarketButtonExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = MechanicProfile()
+        let mechanicProfilePage = Profile()
         app.launch()
         startPage.openProfilePage(.Mechanic)
         mechanicProfilePage.scrollDownToVisibleElement(mechanicProfilePage.myProductsLabel)
@@ -76,7 +76,7 @@ class ARKidsUITests: BaseClass {
     
     func testDepositButtonExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = MechanicProfile()
+        let mechanicProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
@@ -86,7 +86,7 @@ class ARKidsUITests: BaseClass {
     
     func testCongratulatonsAlertExists() {
         let startPage = StartPage()
-        let mechanicProfilePage = MechanicProfile()
+        let mechanicProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
@@ -97,7 +97,7 @@ class ARKidsUITests: BaseClass {
     
     func testAlertDisappearsAfterClosig() {
         let startPage = StartPage()
-        let mechanicProfilePage = MechanicProfile()
+        let mechanicProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Mechanic)
@@ -115,7 +115,7 @@ class ARKidsUITests: BaseClass {
     
     func testMarketButtonForGardener() {
         let startPage = StartPage()
-        let gardenerProfilePage = GardenerProfile()
+        let gardenerProfilePage = Profile()
         app.launch()
         startPage.openProfilePage(.Gardener)
         gardenerProfilePage.scrollDownToVisibleElement(gardenerProfilePage.myProductsLabel)
@@ -124,7 +124,7 @@ class ARKidsUITests: BaseClass {
     }
     func testStocksButtonExists() {
         let startPage = StartPage()
-        let gardenerProfilePage = GardenerProfile()
+        let gardenerProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Gardener)
@@ -133,12 +133,13 @@ class ARKidsUITests: BaseClass {
     }
     func testStocksButtonIsDisabled() {
         let startPage = StartPage()
-        let gardenerProfilePage = GardenerProfile()
+        let gardenerProfilePage = Profile()
         let marketPage = Market()
         app.launch()
         startPage.openProfilePage(.Gardener)
         gardenerProfilePage.openMarket()
         marketPage.productExists(.stockTrading)
+        marketPage.buyProduct(.stockTrading)
         marketPage.productButtonIsDisabled(.stockTrading)
       }
 }
