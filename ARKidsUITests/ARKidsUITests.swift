@@ -13,6 +13,8 @@ class ARKidsUITests: BaseClass {
 // Test Scenario 1
     func testDoctorButtonExists() {
         let startPage = StartPage()
+        feature("Start screen")
+        name("Verify Doctor button exists")
         app.launch()
         startPage.verifyProfessionExists(.Doctor)
     }

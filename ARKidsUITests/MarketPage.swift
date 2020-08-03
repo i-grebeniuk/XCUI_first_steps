@@ -39,8 +39,8 @@ class Market: BaseClass {
     }
     
     func verifyAlertClosed(){
-        XCTAssert(!congratulationsAlertText.exists, "\(congratulationsAlert) alert is displayed, but it should NOT be")
-        XCTAssert(!congratulationsAlertText.exists, "\(congratulationsAlertText) alert is displayed, but it should NOT be")
+        XCTAssertFalse(congratulationsAlertText.exists, "\(congratulationsAlert) alert is displayed, but it should NOT be")
+        XCTAssertFalse(congratulationsAlertText.exists, "\(congratulationsAlertText) alert is displayed, but it should NOT be")
     }
     
     func closeCongratulationsAlert(){
